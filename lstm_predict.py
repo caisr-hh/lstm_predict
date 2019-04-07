@@ -42,11 +42,11 @@ def read_data(exp, N_visits):
     infd.readline()
     for line in infd:
         tokens = line.strip().split(',')
-        pid=int(tokens[0])
-        admId=(tokens[1])
+        pid=int(tokens[0]) #Patient IDs
+        admId=(tokens[1]) #Visit IDs
         det=(tokens[ind1:ind2]) #200 if 185 d2v vector is used
-        output.append(tokens[5])      
-        Weights.append(tokens[203]) 
+        output.append(tokens[5])    # 30 day readmission flag  
+        Weights.append(tokens[203]) # for dummy, normal and readmission visits
         VisitIds.append(tokens[1])
         if admId in admDetailMap:
             admDetailMap[admId].append(det)
