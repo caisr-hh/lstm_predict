@@ -5,7 +5,6 @@ Created on Mon Mar 25 08:51:35 2019
 @author: aaq109
 For queries Contact: awais.ashfaq@hh.se
 """
-
 import timeit
 import numpy as np
 from numpy import array
@@ -18,13 +17,12 @@ from keras.preprocessing import sequence
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import *
 
-
 # Read data
 #Set Params
 N_visits=15 # Maximum number of inpatient visits in the dataset
 
 def read_data(exp, N_visits):
-    label='sampledata_'+str(N_visits)+'.csv' # Dummy dataset for arranging the input data. Data is random.
+    label='sampledata_lstm_'+str(N_visits)+'.csv' # Dummy dataset for arranging the input data.
     print('Reading File: ',label)
     pidAdmMap = {}
     admDetailMap={}
