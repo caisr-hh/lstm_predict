@@ -3,6 +3,7 @@
 Created on Mon Mar 25 08:51:35 2019
 
 @author: aaq109
+For queries Contact: awais.ashfaq@hh.se
 """
 
 import timeit
@@ -20,18 +21,17 @@ from sklearn.metrics import *
 
 # Read data
 #Set Params
-N_visits=18 # Maximum number of inpatient visits in the dataset
+N_visits=15 # Maximum number of inpatient visits in the dataset
 
 def read_data(exp, N_visits):
-    #label='rnn_new_comorb_2016_'+str(N_visits)+'.csv'
-    label='rnn_newrev2_comorb_2016_'+str(N_visits)+'.csv'
+    label='sampledata_'+str(N_visits)+'.csv' # Dummy dataset for arranging the input data. Data is random.
     print('Reading File: ',label)
     pidAdmMap = {}
     admDetailMap={}
     output=[]
     Weights=[]
     VisitIds=[]
-    if exp[0:2]=='11':
+    if exp[0:2]=='11': # Features used for different experiments according to the manuscript
         ind1=6
         ind2=202       
     elif exp[0:2]=='10':
@@ -173,7 +173,7 @@ average_precision={}
 W_classA=0 #Dummy visit weights
 W_classB=1 #No readmission class weight
 W_classC=3 #Readmission class weight
-E_pochs=100 # Traning epochs
+E_pochs=100 # Traning epochs - 80 is better based on ES result
 B_size=32 # Batch size
 T_size=0.3 # Samples used for testing
 NN_nodes=[128,64,32,1] # Number of nodes in the NN
@@ -223,7 +223,7 @@ average_precision={}
 W_classA=0 #Dummy visit weights
 W_classB=1 #No readmission class weight
 W_classC=1 #Readmission class weight
-E_pochs=100 # Traning epochs
+E_pochs=100 # Traning epochs - 80 is better based on ES result
 B_size=32 # Batch size
 T_size=0.3 # Samples used for testing
 NN_nodes=[128,64,32,1] # Number of nodes in the NN
@@ -273,7 +273,7 @@ average_precision={}
 W_classA=0 #Dummy visit weights
 W_classB=1 #No readmission class weight
 W_classC=3 #Readmission class weight
-E_pochs=100 # Traning epochs
+E_pochs=100 # Traning epochs - 80 is better based on ES result
 B_size=32 # Batch size
 T_size=0.3 # Samples used for testing
 NN_nodes=[128,64,32,1] # Number of nodes in the NN
@@ -322,7 +322,7 @@ average_precision={}
 W_classA=0 #Dummy visit weights
 W_classB=1 #No readmission class weight
 W_classC=1 #Readmission class weight
-E_pochs=100 # Traning epochs
+E_pochs=100 # Traning epochs - 80 is better based on ES result
 B_size=32 # Batch size
 T_size=0.3 # Samples used for testing
 NN_nodes=[128,64,32,1] # Number of nodes in the NN
@@ -372,7 +372,7 @@ average_precision={}
 W_classA=0 #Dummy visit weights
 W_classB=1 #No readmission class weight
 W_classC=3 #Readmission class weight
-E_pochs=100 # Traning epochs
+E_pochs=100 # Traning epochs - 80 is better based on ES result
 B_size=32 # Batch size
 T_size=0.3 # Samples used for testing
 NN_nodes=[6,3,1] # Number of nodes in the NN
@@ -423,7 +423,7 @@ average_precision={}
 W_classA=0 #Dummy visit weights
 W_classB=1 #No readmission class weight
 W_classC=1 #Readmission class weight
-E_pochs=100 # Traning epochs
+E_pochs=100 # Traning epochs - 80 is better based on ES result
 B_size=32 # Batch size
 T_size=0.3 # Samples used for testing
 NN_nodes=[6,3,1] # Number of nodes in the NN
